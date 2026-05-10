@@ -242,49 +242,35 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
        <p>
-            The increasing deployment of autonomous systems in complex environments 
-            necessitates efficient communication and task completion among multiple agents. 
-          </p>
-          <p>
-            This paper presents <strong>SERN</strong> (Simulation-Enhanced Realistic Navigation), 
-            a novel framework integrating virtual and physical environments for real-time 
-            collaborative decision-making in multi-robot systems. SERN addresses key challenges 
-            in asset deployment and coordination through our bi-directional 
-            <strong>SERN ROS Bridge</strong> communication framework.
-          </p>
-          <p>
-            Our approach advances the state-of-the-art (SOTA) through:
-            <ul>
-              <li>Accurate real-world representation in virtual environments using Unity’s high-fidelity simulator.</li>
-              <li>Synchronization of physical and virtual robot movements.</li>
-              <li>Efficient ROS data distribution between remote locations.</li>
-              <li>Integration of SOTA semantic segmentation for enhanced environmental perception.</li>
-            </ul>
-          </p>
-          <p>
-            Additionally, we introduce a <strong>Multi-Metric Cost Function (MMCF)</strong> that dynamically balances 
-            latency, reliability, computational overhead, and bandwidth consumption to optimize 
-            system performance in contested environments.
-          </p>
-          <p>
-            We further provide theoretical justification for synchronization accuracy by proving 
-            that the positional error between physical and virtual robots remains bounded under 
-            varying network conditions.
-          </p>
-          <p>
-            Our evaluations show a <strong>15% to 24% improvement</strong> in latency and up to a 
-            <strong>15% increase</strong> in processing efficiency compared to traditional ROS setups. 
-            Real-world and virtual simulation experiments with multiple robots 
-            (<em>Clearpath Jackal and Husky</em>) demonstrate synchronization accuracy, achieving 
-            less than <strong>5 cm</strong> positional error and under <strong>2°</strong> rotational error.
-          </p>
-          <p>
-            These results highlight SERN's potential to enhance situational awareness and 
-            multi-agent coordination in diverse, contested environments.
-          </p>
+    Legged robots now move reliably over rough terrain, stairs, rubble, and cluttered environments,
+    but very tight passages remain difficult. The challenge is often not whether the robot can fit
+    at the entrance, but whether it can keep enough side clearance throughout the crossing. Small yaw
+    errors, lateral corrections, or body-height changes can quickly use up the limited remaining
+    space. Standard navigation systems usually check the opening with a fixed body model and leave
+    the rest to the low-level controller, which is often not enough when the clearance is only a few
+    centimeters.
+  </p>
+
+  <p>
+    We present <strong>GapNav</strong>, a passage-level controller for near-clearance traversal in
+    legged robots. The key idea is to treat the remaining side margin as the quantity to estimate
+    before entry and preserve during traversal. GapNav uses a motion-aware used-width model, a
+    conservative entry rule under bounded uncertainty, and a dedicated passage mode that adjusts
+    motion after entry to reduce unnecessary margin loss.
+  </p>
+
+  <p>
+    We evaluate GapNav in Isaac Sim across multiple environments with varied passage layouts, and on
+    a physical quadruped in real-world narrow-passage trials. In simulation, GapNav reaches
+    <strong>88.1 &plusmn; 1.7%</strong> success with <strong>0.74 &plusmn; 0.09 cm</strong> margin
+    error while improving all main metrics over the baselines. On hardware, it achieves
+    <strong>46.7%</strong> success even at <strong>2 cm</strong> side margin per side, and performance
+    improves as more clearance becomes available.
+  </p>
+
         
         </div>
       </div>
@@ -292,7 +278,7 @@
     <!--/ Abstract. -->
 
    <!-- Paper video. -->
-<div class="columns is-centered has-text-centered">
+<!-- <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
     <h2 class="title is-3">Video</h2>
     <div class="publication-video">
@@ -304,7 +290,7 @@
        </iframe>
     </div>
   </div>
-</div>
+</div> -->
 <!--/ Paper video. -->
 
 </section>
@@ -327,7 +313,7 @@
   </div>
 </section>
 
-<section class="section" id="results">
+<!-- <section class="section" id="results">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Results</h2>
     <div class="content">
@@ -339,7 +325,7 @@
       </figure>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section" id="BibTeX">
