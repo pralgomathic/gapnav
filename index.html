@@ -297,16 +297,15 @@
 
   <section class="section" id="sern-implementation">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">SERN Framework</h2>
+    <h2 class="title is-3">GapNav Framework</h2>
     <div class="content">
       <p>
-        The SERN framework implementation demonstrates bi-directional communication between physical and virtual robots. The system enables synchronized path planning and cross-domain data sharing across separate physical and virtual networks, supporting coordinated multi-robot operations.
-      </p>
+    <strong>GapNav</strong> is a passage-level navigation framework for legged robots operating near the physical clearance limit. It builds a local passage representation from LiDAR, odometry, IMU, and proprioceptive feedback, then estimates passage width, robot offset, yaw misalignment, and remaining side margin. Instead of using a fixed footprint check, GapNav models the robot’s motion-aware used width under yaw, lateral drift, and body-height changes. A conservative entry check activates passage mode only when the predicted margin exceeds a safety threshold. During traversal, the policy uses the encoded passage map, state estimate, and motion history to generate velocity, yaw-rate, and body-height commands that preserve clearance through the full passage.      </p>
     </div>
     <div class="columns is-centered">
       <div class="column is-half">
         <figure class="image">
-          <img src="static/images/SERN ROS Bridge2.png" alt="SERN framework implementation diagram">
+          <img src="static/images/gapnav_framework_web.png" alt="GapNav Framework Overview">
         </figure>
       </div>
     </div>
