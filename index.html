@@ -337,7 +337,176 @@
   </div>
 </section> -->
 
+<!-- GapNav Figure 4 + Table 1 section for GitHub Pages -->
+<section class="section gapnav-results" id="evaluation">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Evaluation Setup and Results</h2>
 
+    <figure class="gapnav-figure">
+      <img
+        src="{{ '/assets/images/gapnav_fig4.png' | relative_url }}"
+        alt="GapNav evaluation setup showing Isaac Sim training scenes and real-world narrow passage trials."
+      />
+      <figcaption>
+        <strong>Fig. 4.</strong> Evaluation setup. Isaac Sim training and test scenes span varied passage
+        geometries. Real-world validation includes a 60 cm narrow-gap approach and a 58 cm narrow-bridge crossing.
+      </figcaption>
+    </figure>
+
+    <div class="gapnav-table-wrap">
+      <table class="gapnav-results-table">
+        <caption>
+          <strong>Table 1.</strong> Aggregate results on the held-out Isaac Sim benchmark.
+          Numbers are mean ± standard deviation over 3 seeds and 960 evaluation episodes per method.
+          Contact rate is measured per 100 traversals.
+        </caption>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Success rate (%)</th>
+            <th>Entry precision (%)</th>
+            <th>Contact rate</th>
+            <th>Crossing time (s)</th>
+            <th>Margin error (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="best-row">
+            <td><strong>GapNav (full)</strong></td>
+            <td><strong>88.1 ± 1.7</strong></td>
+            <td><strong>93.2 ± 1.3</strong></td>
+            <td><strong>8.7 ± 0.9</strong></td>
+            <td><strong>4.62 ± 0.18</strong></td>
+            <td><strong>0.74 ± 0.09</strong></td>
+          </tr>
+          <tr>
+            <td>Without entry rule</td>
+            <td>71.4 ± 2.3</td>
+            <td>78.5 ± 2.0</td>
+            <td>21.3 ± 1.4</td>
+            <td>5.08 ± 0.24</td>
+            <td>1.26 ± 0.14</td>
+          </tr>
+          <tr>
+            <td>Without width head</td>
+            <td>76.8 ± 2.0</td>
+            <td>84.7 ± 1.6</td>
+            <td>15.9 ± 1.2</td>
+            <td>5.36 ± 0.22</td>
+            <td>1.61 ± 0.16</td>
+          </tr>
+          <tr>
+            <td>Without map encoder</td>
+            <td>80.4 ± 1.9</td>
+            <td>87.9 ± 1.7</td>
+            <td>13.7 ± 1.1</td>
+            <td>4.98 ± 0.21</td>
+            <td>1.29 ± 0.13</td>
+          </tr>
+          <tr>
+            <td>Centering only</td>
+            <td>68.9 ± 2.5</td>
+            <td>74.2 ± 2.1</td>
+            <td>23.8 ± 1.6</td>
+            <td>5.81 ± 0.27</td>
+            <td>1.94 ± 0.19</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gapnav-results {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .gapnav-figure {
+    margin: 1.5rem auto 2rem auto;
+    text-align: center;
+  }
+
+  .gapnav-figure img {
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    background: #fff;
+  }
+
+  .gapnav-figure figcaption {
+    max-width: 1000px;
+    margin: 0.85rem auto 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #4a4a4a;
+  }
+
+  .gapnav-table-wrap {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+  }
+
+  .gapnav-results-table {
+    width: 100%;
+    min-width: 820px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .gapnav-results-table caption {
+    caption-side: top;
+    text-align: left;
+    padding: 1rem 1.1rem 0.75rem 1.1rem;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .gapnav-results-table th,
+  .gapnav-results-table td {
+    padding: 0.8rem 0.9rem;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .gapnav-results-table th:first-child,
+  .gapnav-results-table td:first-child {
+    text-align: left;
+  }
+
+  .gapnav-results-table thead th {
+    background: #f7f8fb;
+    color: #222;
+    font-weight: 700;
+  }
+
+  .gapnav-results-table tbody tr:hover {
+    background: #fafcff;
+  }
+
+  .gapnav-results-table .best-row {
+    background: #f2fff7;
+  }
+
+  @media (max-width: 768px) {
+    .gapnav-results-table {
+      font-size: 0.86rem;
+    }
+
+    .gapnav-figure figcaption,
+    .gapnav-results-table caption {
+      font-size: 0.88rem;
+    }
+  }
+</style>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
